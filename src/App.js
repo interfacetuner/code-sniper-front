@@ -16,10 +16,11 @@ export default function App() {
   const [state, setState] = useState({
     form: true,
     user: null,
-    snippets: [{ snippet: "Snippet", level: "1" }],
+    snippets: [{ level: "CSS", snippet: "Snippet", code: "Code" }],
     newSnippet: {
+      level: "CSS",
       snippet: "",
-      level: "3",
+      code: "",
     },
   });
 
@@ -38,8 +39,8 @@ export default function App() {
       console.log(error);
     }
   }
-
-  useEffect(() => {
+    
+    useEffect(() => {
     getAppData();
 
     const cancelSubscription = auth.onAuthStateChanged((user) => {
@@ -62,7 +63,7 @@ export default function App() {
   }, []);
 
   async function addSnippet(e) {
-    // if (!state.user) return;
+    if (!state.user) return;
 
     e.preventDefault();
 
@@ -76,14 +77,23 @@ export default function App() {
       body: JSON.stringify(state.newSnippet),
     }).then((res) => res.json());
 
+    // const code = await fetch(BASE_URL, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-type": "Application/json",
+    //   },
+    //   body: JSON.stringify(state.newCode),
+    // }).then((res) => res.json());
+
     console.log(snippet);
 
     setState((prevState) => ({
       ...prevState,
       snippets: [...prevState.snippets, snippet],
       newSnippet: {
+        level: "CSS",
         snippet: "",
-        level: "3",
+        code: "",
       },
     }));
   }
@@ -93,6 +103,7 @@ export default function App() {
       ...prevState,
       newSnippet: {
         ...prevState.newSnippet,
+        ...prevState.newCode,
         [e.target.name]: e.target.value,
       },
     }));
@@ -128,30 +139,42 @@ export default function App() {
         {state.snippets.map((s) => (
           <article key={s.snippet}>
             <div>{s.snippet}</div> <div>{s.level}</div>
+            <div>{s.code}</div>
           </article>
         ))}
         {
           //  state.user &&
         <>
-        <hr />
+        {/* <hr /> */}
         <form onSubmit={addSnippet}>
+
+        <label>
+            <span>Language</span>
+            &nbsp;&nbsp;&nbsp;
+            <select name="level" value={state.newSnippet.level} onChange={handleChange} >
+              <option value="CSS">CSS</option>
+              <option value="JS">JS</option>
+              <option value="React">React</option>
+              <option value="Python">Python</option>
+              <option value="Node">Node</option>
+              </select>
+            </label>
+            
+          
+
           <label>
-            <span>Code-Snippet</span>
+            <span>Description</span>
             &nbsp;&nbsp;&nbsp;
             <input name="snippet" value={state.newSnippet.snippet} onChange={handleChange} />
           </label>
+
           <label>
-            <span>Function</span>
+            <span>Code-Block</span>
             &nbsp;&nbsp;&nbsp;
-            <select name="level" value={state.newSnippet.level} onChange={handleChange} >
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              </select>
-            </label>
-            <button>ADD</button>
+            <input name="code" value={state.newSnippet.code} onChange={handleChange} />
+          </label>
+
+          <button>Add Snippet</button>
           </form>
           </>
           

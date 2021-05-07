@@ -21,9 +21,9 @@ header {
   align-items: center;
   height: 7rem;
   padding-left: 1rem;
-  background-image: url("https://i.imgur.com/pUBAoTTl.jpg");
+  /* background-image: url("https://i.imgur.com/pUBAoTTl.jpg"); */
   box-shadow: 5px 5px 5px 5px #808080;
-  color: rgba(218, 222, 236, 0.945);
+  color: rgba(96, 161, 147, 0.945);
 }
 header > ul {
   list-style: none;
@@ -84,7 +84,7 @@ article > div {
   padding: 0.5rem;
 }
 article > div:nth-child(2) {
-  width: 2rem;
+  width: 4rem;
   background-color: rgba(84, 88, 104, 0.945);
   text-align: center;
 }
@@ -100,11 +100,11 @@ label span {
 }
 input,
 select {
-  width: 100%;
+  width: 50%;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
   font-weight: bold;
-  padding: 0.4rem;
+  padding: 0.5rem;
   color: rgba(84, 88, 104, 0.945);
   border: 3px solid rgb(104, 183, 223);
   border-radius: 0;
@@ -116,8 +116,8 @@ button {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
   margin: 0.5rem 0 0 auto;
-  padding: 0.4rem;
-  background-color: red;
+  padding: 0.6rem;
+  background-color: rgb(9, 64, 68);
   color: white;
   border: none;
   outline: none;
