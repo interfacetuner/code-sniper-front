@@ -135,7 +135,7 @@ export default function App() {
       <>
       { isFormTrue  ?
         
-        <section className="formPage">
+        <section class="block text-gray-500 font-bold md:text-center mb-1 md:mb-0 pr-4">
         {state.snippets.map((s) => (
           <article key={s.snippet}>
             <div>{s.snippet}</div> <div>{s.level}</div>
@@ -145,12 +145,14 @@ export default function App() {
         {
           //  state.user &&
         <>
-        {/* <hr /> */}
-        <form onSubmit={addSnippet}>
+        <hr />
+        <div class="flex items-center justify-center h-screen">
 
-        <label>
-            <span>Language</span>
-            &nbsp;&nbsp;&nbsp;
+        <form class="bg-indigo-800 text-white font-bold rounded-lg border shadow-lg p-20" onSubmit={addSnippet}>
+
+        <label class="block text-gray-500 font-bold md:text-center mb-1 md:mb-0 pr-4">
+            <span>Select Topic</span>
+            &nbsp;&nbsp;
             <select name="level" value={state.newSnippet.level} onChange={handleChange} >
               <option value="CSS">CSS</option>
               <option value="JS">JS</option>
@@ -159,23 +161,29 @@ export default function App() {
               <option value="Node">Node</option>
               </select>
             </label>
+
             
           
 
           <label>
+          &nbsp;
             <span>Description</span>
-            &nbsp;&nbsp;&nbsp;
-            <input name="snippet" value={state.newSnippet.snippet} onChange={handleChange} />
+            &nbsp;&nbsp;
+            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" name="snippet" value={state.newSnippet.snippet} onChange={handleChange} />
           </label>
 
           <label>
+          &nbsp;
             <span>Code-Block</span>
-            &nbsp;&nbsp;&nbsp;
-            <input name="code" value={state.newSnippet.code} onChange={handleChange} />
+            &nbsp;&nbsp;
+            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" name="code" value={state.newSnippet.code} onChange={handleChange} />
           </label>
-
-          <button>Add Snippet</button>
+          &nbsp;&nbsp;
+          <div>
+          <button class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">Add Snippet</button>
+          </div>
           </form>
+          </div>
           </>
           
           }

@@ -3,7 +3,7 @@ import "../../index.css";
 
 const HomePage = (props) => {
   return (
-    <div className="homePage">
+    <div>
       <h2>Welcome</h2>
       
     </div>
