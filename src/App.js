@@ -133,51 +133,52 @@ export default function App() {
       </main>
 
       <>
-      { isFormTrue  ?
+      {/* { isFormTrue  ? */}
         
-        <section class="block text-gray-500 font-bold md:text-center mb-1 md:mb-0 pr-4">
-        {state.snippets.map((s) => (
-          <article key={s.snippet}>
-            <div>{s.snippet}</div> <div>{s.level}</div>
+        <section>
+        {/* {state.snippets.map((s) => (
+          <article class="block text-gray-500 font-bold md:text-center mb-1 md:mb-0 pr-4" key={s.snippet}>
+            <div>{s.level}</div> <div>{s.snippet}</div>
             <div>{s.code}</div>
           </article>
-        ))}
+        ))} */}
         {
-          //  state.user &&
+          
         <>
         <hr />
         <div class="flex items-center justify-center h-screen">
 
         <form class="bg-indigo-800 text-white font-bold rounded-lg border shadow-lg p-20" onSubmit={addSnippet}>
 
-        <label class="block text-gray-500 font-bold md:text-center mb-1 md:mb-0 pr-4">
-            <span>Select Topic</span>
-            &nbsp;&nbsp;
-            <select name="level" value={state.newSnippet.level} onChange={handleChange} >
+        <label>
+            <p class="text-center ...">Select Topic</p>
+            &nbsp;
+            <select class="flex content-center justify-center text-black font-bold" name="level" value={state.newSnippet.level} onChange={handleChange} >
               <option value="CSS">CSS</option>
               <option value="JS">JS</option>
               <option value="React">React</option>
               <option value="Python">Python</option>
               <option value="Node">Node</option>
               </select>
-            </label>
-
-            
-          
-
-          <label>
-          &nbsp;
-            <span>Description</span>
+              </label>
             &nbsp;&nbsp;
+            
+            <div>
+          <label>
+            <p class="text-center ...">Description</p>
+            
             <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" name="snippet" value={state.newSnippet.snippet} onChange={handleChange} />
           </label>
+          </div>
 
+          <div class="flex items-center justify-center">
           <label>
-          &nbsp;
-            <span>Code-Block</span>
-            &nbsp;&nbsp;
+          
+            <p class="text-center ...">Code-Block</p>
+           
             <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" name="code" value={state.newSnippet.code} onChange={handleChange} />
           </label>
+          </div>
           &nbsp;&nbsp;
           <div>
           <button class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">Add Snippet</button>
@@ -187,9 +188,21 @@ export default function App() {
           </>
           
           }
+
+          {state.snippets.map((s) => (
+          <article class="block text-gray-500 font-bold md:text-center mb-0 md:mb-0 pr-4 prose lg:prose-xl border-4 md:border-t-3 ..." key={s.snippet}>
+            <div>{s.level}</div>
+            
+            <div>{s.snippet}</div>
+            
+            <div>{s.code}</div>
+            &nbsp;
+          </article>
+        ))}
+
         </section>
         
-        : "" } 
+        {/* : "" } */}
         </>
           </>
           ); 
