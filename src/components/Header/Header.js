@@ -13,7 +13,7 @@ const Header = (props) => (
             <img src={props.user.photoURL} alt={props.user.displayName} />
           </li>
           
-          <li class="w-20 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={logout}>
+          <li class="w-20 text-white font-bold py-2 px-4 rounded bg-blue-500 hover:bg-red-700 ..." onClick={logout}>
             Logout
           </li>
          
@@ -21,7 +21,7 @@ const Header = (props) => (
 
         </>
       ) : (
-        <li class="w-20 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={login}>
+        <li class="w-20 text-white font-bold py-2 px-4 rounded bg-blue-500 hover:bg-red-700 ..." onClick={login}>
           Login
         </li>
       )}
