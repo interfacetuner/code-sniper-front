@@ -158,7 +158,7 @@ export default function App() {
           </>
           
           
-
+            <section className="reaults">
           {state.snippets.map((s) => (
           <article class="block text-gray-500 font-bold md:text-center mb-0 md:mb-0 pr-4 prose lg:prose-xl border-4 md:border-t-3 ..." key={s.snippet}>
             <div>{s.level}</div>
@@ -169,7 +169,7 @@ export default function App() {
             &nbsp;
           </article>
         ))}
-
+        </section>
         </section>
         
         </>
