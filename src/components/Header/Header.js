@@ -1,10 +1,10 @@
 import { login, logout } from "../../services/firebase";
-// import 'firebase/auth';
+
 
 
 const Header = (props) => (
-  <header class="flex items-center justify-between flex-wrap bg-teal p-6">
-    <h1 class="font-semibold text-xl tracking-tight">Code-Sniper</h1>
+  <header class="flex items-center justify-between flex-wrap p-4 bg-purple-300 bg-opacity-100 ...">
+    <h1 class="font-bold text-6xl tracking-tight">Code-Sniper</h1>
     <ul>
       {props.user ? (
         <>
@@ -13,7 +13,7 @@ const Header = (props) => (
             <img src={props.user.photoURL} alt={props.user.displayName} />
           </li>
           
-          <li class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={logout}>
+          <li class="w-20 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={logout}>
             Logout
           </li>
          
@@ -21,7 +21,7 @@ const Header = (props) => (
 
         </>
       ) : (
-        <li class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={login}>
+        <li class="w-20 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={login}>
           Login
         </li>
       )}

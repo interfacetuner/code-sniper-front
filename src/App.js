@@ -24,7 +24,6 @@ export default function App() {
     },
   });
 
-  const NotFound = (props) => <div>404 Sorry That Page Doesnt Exist</div>;
 
   async function getAppData() {
     try {
@@ -77,15 +76,8 @@ export default function App() {
       body: JSON.stringify(state.newSnippet),
     }).then((res) => res.json());
 
-    // const code = await fetch(BASE_URL, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-type": "Application/json",
-    //   },
-    //   body: JSON.stringify(state.newCode),
-    // }).then((res) => res.json());
-
     console.log(snippet);
+
 
     setState((prevState) => ({
       ...prevState,
@@ -109,13 +101,6 @@ export default function App() {
     }));
   }
 
-  
-  // function handleClick(state) {
-  //   state.form = true;
-  // }
-
-  const isFormTrue = state.form;
-
   return (
     <>
       <Header user={state.user} />
@@ -124,26 +109,12 @@ export default function App() {
           <Switch>
           <Route exact path="/" render={(props) => 
           <HomePage {...props} />} />
-            {/* <Route
-              path="/"
-               />  */}
-              
-            </Switch>
-            </BrowserRouter>
+          </Switch>
+        </BrowserRouter>
       </main>
 
       <>
-      {/* { isFormTrue  ? */}
-        
         <section>
-        {/* {state.snippets.map((s) => (
-          <article class="block text-gray-500 font-bold md:text-center mb-1 md:mb-0 pr-4" key={s.snippet}>
-            <div>{s.level}</div> <div>{s.snippet}</div>
-            <div>{s.code}</div>
-          </article>
-        ))} */}
-        {
-          
         <>
         <hr />
         <div class="flex items-center justify-center h-screen">
@@ -167,7 +138,7 @@ export default function App() {
           <label>
             <p class="text-center ...">Description</p>
             
-            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" name="snippet" value={state.newSnippet.snippet} onChange={handleChange} />
+            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" name="snippet" value={state.newSnippet.snippet} onChange={handleChange} />
           </label>
           </div>
 
@@ -176,7 +147,7 @@ export default function App() {
           
             <p class="text-center ...">Code-Block</p>
            
-            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" name="code" value={state.newSnippet.code} onChange={handleChange} />
+            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-6 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" name="code" value={state.newSnippet.code} onChange={handleChange} />
           </label>
           </div>
           &nbsp;&nbsp;
@@ -187,7 +158,7 @@ export default function App() {
           </div>
           </>
           
-          }
+          
 
           {state.snippets.map((s) => (
           <article class="block text-gray-500 font-bold md:text-center mb-0 md:mb-0 pr-4 prose lg:prose-xl border-4 md:border-t-3 ..." key={s.snippet}>
@@ -202,7 +173,6 @@ export default function App() {
 
         </section>
         
-        {/* : "" } */}
         </>
           </>
           ); 
