@@ -27,7 +27,7 @@ export default function App() {
 
   async function getAppData() {
     try {
-      const BASE_URL = "https://code-sniper.herokuapp.com/api/snippets";
+      const BASE_URL = "https://code-sniper.netlify.app/api/snippets";
 
       const snippets = await fetch(BASE_URL).then((res) => res.json());
       setState((prevState) => ({
@@ -66,7 +66,7 @@ export default function App() {
 
     e.preventDefault();
 
-    const BASE_URL = "https://code-sniper.herokuapp.com/api/snippets"; //??
+    const BASE_URL = "https://code-sniper.netlify.app/api/snippets"; //??
 
     const snippet = await fetch(BASE_URL, {
       method: "POST",
