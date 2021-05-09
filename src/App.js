@@ -27,7 +27,7 @@ export default function App() {
 
   async function getAppData() {
     try {
-      const BASE_URL = "https://code-sniper-back.herokuapp.com/api/snippets";
+      const BASE_URL = "https://code-sniper.netlify.app/api/snippets";
 
       const snippets = await fetch(BASE_URL).then((res) => res.json());
       setState((prevState) => ({
@@ -66,7 +66,7 @@ export default function App() {
 
     e.preventDefault();
 
-    const BASE_URL = "https://code-sniper-back.herokuapp.com/api/snippets"; //??
+    const BASE_URL = "https://code-sniper.netlify.app/api/snippets"; //??
 
     const snippet = await fetch(BASE_URL, {
       method: "POST",
@@ -112,7 +112,7 @@ export default function App() {
         </BrowserRouter>
       </main>
 
-      <>
+      
         <section>
         <>
         <hr />
@@ -158,7 +158,7 @@ export default function App() {
           </>
           
           
-            <section className="reaults">
+            <>
           {state.snippets.map((s) => (
           <article class="block text-gray-500 font-bold md:text-center mb-0 md:mb-0 pr-4 prose lg:prose-xl border-4 md:border-t-3 ..." key={s.snippet}>
             <div>{s.level}</div>
@@ -168,11 +168,11 @@ export default function App() {
             <div>{s.code}</div>
             &nbsp;
           </article>
-        ))}
-        </section>
+        ))};
+        </>
         </section>
         
         </>
-          </>
+          
           ); 
         };  
