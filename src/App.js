@@ -115,15 +115,18 @@ export default function App() {
       
         <section>
         <>
-        <hr />
+
         <div class="flex items-center justify-center h-screen">
 
-        <form class="bg-indigo-800 text-white font-bold rounded-lg border shadow-lg p-20" onSubmit={addSnippet}>
+        <form class="bg-indigo-800 text-white font-bold rounded-lg border shadow-2xl p-20" onSubmit={addSnippet}>
 
         <label>
             <p class="text-center ...">Select Topic</p>
-            &nbsp;
-            <select class="flex content-center justify-center text-black font-bold" name="level" value={state.newSnippet.level} onChange={handleChange} >
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <select class="text-black font-bold justify-center" name="level" value={state.newSnippet.level} onChange={handleChange} >
               <option value="CSS">CSS</option>
               <option value="JS">JS</option>
               <option value="React">React</option>
@@ -131,9 +134,10 @@ export default function App() {
               <option value="Node">Node</option>
               </select>
               </label>
-            &nbsp;&nbsp;
             
             <div>
+
+            &nbsp;&nbsp;
           <label>
             <p class="text-center ...">Description</p>
             
