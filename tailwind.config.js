@@ -234,6 +234,7 @@ module.exports = {
       DEFAULT: '1',
     },
     fontFamily: {
+      'press-start': ['"Press Start 2P"', 'cursive'],
       sans: [
         'ui-sans-serif',
         'system-ui',

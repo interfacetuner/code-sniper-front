@@ -160,12 +160,12 @@ export default function App() {
           
             <>
           {state.snippets.map((s) => (
-          <article class="block text-black-500 font-bold md:text-center mb-0 md:mb-0 pr-4 prose lg:prose-xl border-4 md:border-t-2 bg-purple-200  ..." key={s.snippet}>
-            <div>{s.level}</div>
+          <article class="block text-black-500 md:text-center mb-0 md:mb-0 pr-4 prose lg:prose-xl border-4 md:border-t-2 bg-purple-200  ..." key={s.snippet}>
+            <div class="text-blue-500">{s.level}</div>
             
-            <div>{s.snippet}</div>
+            <div class="italic">{s.snippet}</div>
             
-            <div>{s.code}</div>
+            <div class="font-bold text-red-500">{s.code}</div>
             &nbsp;
           </article>
         ))};

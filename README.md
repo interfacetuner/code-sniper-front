@@ -17,6 +17,7 @@
 
 1. Delete/Edit functions
 2. Search option
+3. Syntax Higghlighting
 
 
 

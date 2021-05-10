@@ -3,8 +3,8 @@ import { login, logout } from "../../services/firebase";
 
 
 const Header = (props) => (
-  <header class="flex items-center justify-between flex-wrap p-4 bg-gradient-to-r from-green-400 via-purple-500 to-blue-500 ...">
-    <h1 class="font-bold text-purple-800 text-6xl tracking-tight">Code-Sniper</h1>
+  <header class="flex items-center justify-between flex-wrap p-4 shadow-lg bg-gradient-to-r from-green-400 via-purple-500 to-blue-500 ...">
+    <h1 class="font-bold text-purple-800 text-4xl tracking-tight font-press-start">Code-Sniper</h1>
     <ul>
       {props.user ? (
         <>
