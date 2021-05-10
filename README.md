@@ -20,7 +20,8 @@
 
 
 
-Deployed Site: <https://code-sniper.netlify.app/> 👈
+Deployed Site Netlify: <https://code-sniper.netlify.app/> 👈
+Deployed Site Vercel: <https://code-sniper-front.vercel.app/> 👈
 
 
 
