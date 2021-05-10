@@ -3,8 +3,8 @@ import { login, logout } from "../../services/firebase";
 
 
 const Header = (props) => (
-  <header class="flex items-center justify-between flex-wrap p-4 bg-purple-300 bg-opacity-100 ...">
-    <h1 class="font-bold text-6xl tracking-tight">Code-Sniper</h1>
+  <header class="flex items-center justify-between flex-wrap p-4 bg-gradient-to-r from-green-400 via-purple-500 to-blue-500 ...">
+    <h1 class="font-bold text-purple-800 text-6xl tracking-tight">Code-Sniper</h1>
     <ul>
       {props.user ? (
         <>
@@ -13,7 +13,7 @@ const Header = (props) => (
             <img src={props.user.photoURL} alt={props.user.displayName} />
           </li>
           
-          <li class="w-20 text-white font-bold py-2 px-4 rounded bg-blue-500 hover:bg-red-700 ..." onClick={logout}>
+          <li class="w-20 text-white font-bold py-2 px-4 rounded bg-purple-500 hover:bg-red-700 ..." onClick={logout}>
             Logout
           </li>
          
