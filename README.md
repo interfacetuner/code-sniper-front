@@ -10,7 +10,7 @@
 4. Mongoose
 5. TailWind CSS 🎆
 6. FireBase 🔥
-7. MongoDB
+7. MongoDB 📚
 
  
 
